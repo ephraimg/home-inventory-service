@@ -15,7 +15,7 @@ Promise.promisifyAll(redis.RedisClient.prototype);
 Promise.promisifyAll(redis.Multi.prototype);
 
 
-const redisDB = process.env.LOCAL === 1
+const redisDB = process.env.LOCAL === '1'
   ? redis.createClient(process.env.REDIS_LOCAL_URL)
   : redis.createClient(process.env.REDIS_AWS_URL);
 
